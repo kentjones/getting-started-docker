@@ -1,6 +1,6 @@
 # Install the base requirements for the app.
 # This stage is to support development.
-FROM python:alpine AS base
+FROM python:alpine AS python-base
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
@@ -26,11 +26,11 @@ RUN apk add zip && \
     zip -r /app.zip /app
 
 # Dev-ready container - actual files will be mounted in
-FROM base AS dev
+FROM python-base AS dev
 CMD ["mkdocs", "serve", "-a", "0.0.0.0:8000"]
 
 # Do the actual build of the mkdocs site
-FROM base AS build
+FROM python-base AS build
 COPY . .
 RUN mkdocs build
 

@@ -1,8 +1,6 @@
 # Docker Getting Started Tutorial
 
-This tutorial has been written with the intent of helping folks get up and running
-with containers and is designed to work with Docker Desktop. While not going too much 
-into depth, it covers the following topics:
+This tutorial has been written with the intent of helping folks get up and running with containers and is designed to work with Docker Desktop. While not going too much into depth, it covers the following topics:
 
 - Running your first container
 - Building containers
@@ -19,7 +17,7 @@ into depth, it covers the following topics:
 If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
 
 ```bash
-docker run -d -p 80:80 docker/getting-started
+docker run -d -p 80:80 docker/getting-started .
 ```
 
 Once it has started, you can open your browser to [http://localhost](http://localhost).
